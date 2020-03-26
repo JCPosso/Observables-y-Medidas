@@ -188,8 +188,8 @@ class matriz:
                                 a[i][h]=complex(self.c[i][h].real,self.c[i][h].img)
                 ob= np.array(a)
                 eig_valu, eig_vect= al.eig(ob)
-                
-
+                eig_valu=eig_valu.real
+                eig_vect=eig_vect.real
                 vectores=[]
                 for i in range(len(eig_vect)):
                         vectores.append(matriz.iniciar(len(eig_vect[0]),1))
