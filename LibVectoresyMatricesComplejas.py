@@ -195,12 +195,12 @@ class matriz:
                         vectores.append(matriz.iniciar(len(eig_vect[0]),1))
                 for i in range(len(vectores)):
                         for j in range(len(vectores[0].c)):
-                                vectores[i].c[j][0]=complejo(eig_vect[i][j].real,eig_vect[i][j].imag)
+                                vectores[i].c[j][0]=complejo(round(eig_vect[i][j].real,4),round(eig_vect[i][j].imag,4) )
                                 
                         
                 e_val=matriz.iniciar(len(eig_valu),1)
                 for i in range(len(e_val.c)):
-                                e_val.c[i][0]=complejo(eig_valu[i].real,eig_valu[i].imag)
+                                e_val.c[i][0]=complejo(round(eig_valu[i].real,4),eig_valu[i].imag)
                                 
                 return  e_val, vectores
         def __str__(self):
