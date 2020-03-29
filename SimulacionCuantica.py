@@ -161,7 +161,12 @@ def conmutador(ob1 ,ob2):
 def probbilidad_transitoVec(v, ev):
         res=transicionAmplitud(v,ev)
         return round(res.modulo_cuadrado(),2)
-def dinamica(times,arrayUn,vector):
+def dinamicaUp(arrayUn,vector):
+        for u in range(len(arrayUn)):
+                temp=arrayUn[u].alcanceSobre(vector)
+                vector=temp
+        return vector
+def dinamicaDown(arrayUn,vector):
         for u in range(len(arrayUn)-1):
                 arrayUn[u+1]=arrayUn[u].multiplica(arrayUn[u+1])
-        return arrayUn[-1].state(vector,times)
+        return arrayUn[-1].alcanceSobre(vector)
